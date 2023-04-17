@@ -23,9 +23,4 @@
         name: curl
         state: present
 
-    - name: Install curl dependency
-      apt:
-        name: curl
-        state: present
-
 ...
