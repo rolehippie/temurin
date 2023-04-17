@@ -18,4 +18,14 @@
         name: python3-gpg
         state: present
 
+    - name: Install curl dependency
+      apt:
+        name: curl
+        state: present
+
+    - name: Install curl dependency
+      apt:
+        name: curl
+        state: present
+
 ...
