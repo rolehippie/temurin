@@ -1,0 +1,9 @@
+# Standards: 1.2
+---
+# @var temurin_packages:description: List of packages to install
+temurin_packages:
+  - adoptium-ca-certificates
+  - temurin-8-jre
+  - temurin-17-jre
+
+...

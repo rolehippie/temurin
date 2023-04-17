@@ -1,0 +1,27 @@
+# Standards: 1.2
+---
+- name: Download repo key
+  shell:
+    cmd: curl -sSL https://packages.adoptium.net/artifactory/api/gpg/key/public | gpg --dearmor --output /usr/share/keyrings/adoptium-archive-keyring.gpg
+    creates: /usr/share/keyrings/adoptium-archive-keyring.gpg
+  tags:
+    - temurin
+
+- name: Add apt repository
+  apt_repository:
+    repo: "deb [signed-by=/usr/share/keyrings/adoptium-archive-keyring.gpg] https://packages.adoptium.net/artifactory/deb {{ ansible_distribution_release }} main"
+    filename: adoptium
+    update_cache: True
+    state: present
+  tags:
+    - temurin
+
+- name: Install required packages
+  loop: "{{ temurin_packages }}"
+  package:
+    name: "{{ item.name | default(item) }}"
+    state: "{{ item.state | default('present') }}"
+  tags:
+    - temurin
+
+...
