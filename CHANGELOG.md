@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.0.0](https://github.com/rolehippie/temurin/compare/v1.0.0...v2.0.0) (2024-02-12)
+
+
+### Features
+
+* drop support for ubuntu 18.04 ([db972ae](https://github.com/rolehippie/temurin/commit/db972aede6f2df61c2191ca503c1c67303311c2e))
+* used full qualified collection names ([6936991](https://github.com/rolehippie/temurin/commit/693699140edd8f8a64b4332f0d57fabc9d630758))
+
 ## 1.0.0 (2023-04-17)
 
 
