@@ -17,6 +17,7 @@ Building and improving this Ansible role have been sponsored by my current and p
 
 - [Requirements](#requirements)
 - [Default Variables](#default-variables)
+  - [temurin_keyring](#temurin_keyring)
   - [temurin_packages](#temurin_packages)
 - [Discovered Tags](#discovered-tags)
 - [Dependencies](#dependencies)
@@ -30,6 +31,16 @@ Building and improving this Ansible role have been sponsored by my current and p
 - Minimum Ansible version: `2.10`
 
 ## Default Variables
+
+### temurin_keyring
+
+Path for the repository keyring
+
+#### Default value
+
+```YAML
+temurin_keyring: /usr/share/keyrings/adoptium-archive-keyring.gpg
+```
 
 ### temurin_packages
 
