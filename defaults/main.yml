@@ -5,4 +5,7 @@ temurin_packages:
   - temurin-8-jre
   - temurin-17-jre
 
+# @var temurin_keyring:description: Path for the repository keyring
+temurin_keyring: /usr/share/keyrings/adoptium-archive-keyring.gpg
+
 ...

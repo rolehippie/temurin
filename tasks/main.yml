@@ -1,16 +1,36 @@
 ---
 - name: Download repo key
-  ansible.builtin.shell:
-    cmd: curl -sSL https://packages.adoptium.net/artifactory/api/gpg/key/public | gpg --dearmor --output /usr/share/keyrings/adoptium-archive-keyring.gpg
-    creates: /usr/share/keyrings/adoptium-archive-keyring.gpg
+  register: temurin_key_download
+  ansible.builtin.get_url:
+    url: https://packages.adoptium.net/artifactory/api/gpg/key/public
+    dest: "{{ temurin_keyring }}.asc"
+    mode: u=rw,g=r,o=r
+    force: true
+  tags:
+    - temurin
+
+- name: Check repo key
+  register: temurin_key_status
+  ansible.builtin.stat:
+    path: "{{ temurin_keyring }}"
+  tags:
+    - temurin
+
+- name: Dearmor repo key
+  when:
+    - temurin_key_download.changed or not temurin_key_status.stat.exists
+  register: temurin_key_convert
+  changed_when: temurin_key_convert.rc == 0
+  ansible.builtin.command:
+    cmd: "gpg --dearmor -o {{ temurin_keyring }} {{ temurin_keyring }}.asc"
   tags:
     - temurin
 
 - name: Add apt repository
   ansible.builtin.apt_repository:
-    repo: "deb [signed-by=/usr/share/keyrings/adoptium-archive-keyring.gpg] https://packages.adoptium.net/artifactory/deb {{ ansible_distribution_release }} main"
+    repo: "deb [signed-by={{ temurin_keyring }}] https://packages.adoptium.net/artifactory/deb {{ ansible_distribution_release }} main"
     filename: adoptium
-    update_cache: True
+    update_cache: true
     state: present
   tags:
     - temurin
@@ -19,7 +39,7 @@
   loop: "{{ temurin_packages }}"
   ansible.builtin.package:
     name: "{{ item.name | default(item) }}"
-    state: "{{ item.state | default('present') }}"
+    state: "{{ 'present' if item.state is not defined else item.state }}"
   tags:
     - temurin
 

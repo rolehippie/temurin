@@ -6,5 +6,6 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
 ).get_hosts("all")
 
 
-def test_dummy(host):
-    assert True
+def test_is_installed(host):
+    pkg = host.package("temurin-8-jre")
+    assert pkg.is_installed

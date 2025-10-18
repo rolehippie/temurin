@@ -1,4 +1,5 @@
 ---
-role_name: temurin
+role:
+  name: temurin
 
 ...
