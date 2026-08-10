@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.0](https://github.com/rolehippie/temurin/compare/v2.2.0...v2.3.0) (2026-08-10)
+
+### Dependencies
+
+* **minor:** update dependency pipx:ansible-doctor to v8.4.0 ([#50](https://github.com/rolehippie/temurin/issues/50)) ([19f4c20](https://github.com/rolehippie/temurin/commit/19f4c2060ed974364d343b9d6fab8083c6b10825))
+* **patch:** update dependency python to v3.14.7 ([#48](https://github.com/rolehippie/temurin/issues/48)) ([faf5a51](https://github.com/rolehippie/temurin/commit/faf5a51cd4d033ee5481d908399051dfe6328885))
+
 ## [2.2.0](https://github.com/rolehippie/temurin/compare/v2.1.0...v2.2.0) (2026-07-27)
 
 ## [2.1.0](https://github.com/rolehippie/temurin/compare/v2.0.0...v2.1.0) (2025-10-18)
