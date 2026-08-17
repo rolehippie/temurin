@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.4.0](https://github.com/rolehippie/temurin/compare/v2.3.0...v2.4.0) (2026-08-17)
+
+### Dependencies
+
+* **minor:** update dependency pipx:ansible-lint to v26.8.0 ([#53](https://github.com/rolehippie/temurin/issues/53)) ([7193a78](https://github.com/rolehippie/temurin/commit/7193a785719a165c3f00d2294e2783fdaee4da72))
+* **minor:** update dependency pipx:molecule to v26.8.0 ([#54](https://github.com/rolehippie/temurin/issues/54)) ([28c8fa5](https://github.com/rolehippie/temurin/commit/28c8fa5632c398d54f8dfa3b0a801e12cb3546e4))
+* **patch:** update dependency pipx:ansible-core to v2.21.3 ([#51](https://github.com/rolehippie/temurin/issues/51)) ([f3f99cd](https://github.com/rolehippie/temurin/commit/f3f99cdfe6a581e552a75c96562e5ce432377990))
+* **patch:** update dependency pre-commit to v4.6.2 ([#52](https://github.com/rolehippie/temurin/issues/52)) ([5315bf4](https://github.com/rolehippie/temurin/commit/5315bf4325d093cea0e7441d988c797e11ef70df))
+
 ## [2.3.0](https://github.com/rolehippie/temurin/compare/v2.2.0...v2.3.0) (2026-08-10)
 
 ### Dependencies
