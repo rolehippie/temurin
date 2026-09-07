@@ -22,13 +22,13 @@
   register: temurin_key_convert
   changed_when: temurin_key_convert.rc == 0
   ansible.builtin.command:
-    cmd: "gpg --dearmor -o {{ temurin_keyring }} {{ temurin_keyring }}.asc"
+    cmd: "gpg --batch --yes --dearmor -o {{ temurin_keyring }} {{ temurin_keyring }}.asc"
   tags:
     - temurin
 
 - name: Add apt repository
   ansible.builtin.apt_repository:
-    repo: "deb [signed-by={{ temurin_keyring }}] https://packages.adoptium.net/artifactory/deb {{ ansible_distribution_release }} main"
+    repo: "deb [signed-by={{ temurin_keyring }}] https://packages.adoptium.net/artifactory/deb {{ ansible_facts['distribution_release'] }} main"
     filename: adoptium
     update_cache: true
     state: present
