@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.5.0](https://github.com/rolehippie/temurin/compare/v2.4.1...v2.5.0) (2026-09-07)
+
+### Features
+
+* add separate requirements for molecule run ([956f26d](https://github.com/rolehippie/temurin/commit/956f26dd1639f3acab0e848f215c48908c477f6e))
+* use new required facts as attributes ([a77a3af](https://github.com/rolehippie/temurin/commit/a77a3af1b0e5078bd2ee45848c6ddafdf8977379))
+
 ## [2.4.1](https://github.com/rolehippie/temurin/compare/v2.4.0...v2.4.1) (2026-08-31)
 
 ### Dependencies
